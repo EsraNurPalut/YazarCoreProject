@@ -1,0 +1,52 @@
+﻿@model IEnumerable<EntityLayer.Concrete.Yazarlar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-left: 50px;">Yazarlar</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card" style="margin-left: 50px;">
+            <div class="card-header">
+                <table class="table table-hover border-dark col-md-12" style="margin-top:50px;">
+                    <thead>
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.YazarAdSoyad)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.YazarMail)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.YazarAdSoyad)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.YazarMail)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.YazarID">Düzenle</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.YazarID">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<p style="margin-left: 50px;">
+    <a asp-action="Create">Yeni Yazar Ekle</a>
+</p>

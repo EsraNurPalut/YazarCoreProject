@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Yazarlar
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-left: 50px;">Yazar Ekleme Sayfası</h1>
+
+<h4>Yazarlar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="margin-left: 50px;">
+            <div class="card-header">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="YazarAdSoyad" class="control-label"></label>
+                        <input asp-for="YazarAdSoyad" class="form-control" />
+                        <span asp-validation-for="YazarAdSoyad" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="YazarMail" class="control-label"></label>
+                        <input asp-for="YazarMail" class="form-control" />
+                        <span asp-validation-for="YazarMail" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Geriye Dön</a>
+</div>
+
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@

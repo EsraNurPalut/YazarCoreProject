@@ -1,0 +1,40 @@
+﻿@model EntityLayer.Concrete.Kitaplar
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-left: 50px;">Kitap Silme Sayfası</h1>
+
+<h3>Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Kitaplar</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KitapAd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KitapAd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.KitapBasimYili)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.KitapBasimYili)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Yazarlar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YazarID)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KitapID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Geriye Dön</a>
+    </form>
+</div>
