@@ -22,24 +22,30 @@
                             <th>
                                 @Html.DisplayNameFor(model => model.YayineviAdres)
                             </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Yazarlar.YazarID)
+                            </th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.YayineviAd)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.YayineviAdres)
-                                </td>
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.YayineviID">Düzenle</a> |
-                                    <a asp-action="Delete" asp-route-id="@item.YayineviID">Sil</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.YayineviAd)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.YayineviAdres)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Yazarlar.YazarID)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.YayineviID">Düzenle</a> |
+                                <a asp-action="Delete" asp-route-id="@item.YayineviID">Sil</a>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>
