@@ -63,7 +63,7 @@ namespace CoreProject
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Kitaplar}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace EntityLayer.Concrete
@@ -15,5 +16,9 @@ namespace EntityLayer.Concrete
 
         [StringLength(50)]
         public string YayineviAdres { get; set; }
+
+        [ForeignKey("Yazarlar")]
+        public int YazarID { get; set; }
+        public virtual Yazarlar Yazarlar { get; private set; }
     }
 }

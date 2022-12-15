@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace CoreProject.Controllers
 {
@@ -20,6 +21,10 @@ namespace CoreProject.Controllers
 
         public IActionResult Index()
         {
+            string api = "a0e0cef4b2ef0762358ca5e46da69e42";
+            string connection = "https://api.openweathermap.org/data/2.5/weather?q=%C4%B0stanbul&mode=xml&lang=tr&units=metric&appid="+api;
+            XDocument document = XDocument.Load(connection);
+            ViewBag.v4 = document.Descendants("temperature").ElementAt(0).Attribute("value").Value;
             return View();
         }
 
