@@ -25,5 +25,7 @@ namespace DataAccessLayer.Concrete
 
         public DbSet<Belge> Belges { get; set; }
 
+        public DbSet<KitapSayar> KitapSayars { get; set; }
+
     }
 }
