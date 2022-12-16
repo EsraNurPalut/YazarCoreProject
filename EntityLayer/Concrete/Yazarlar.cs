@@ -14,6 +14,7 @@ namespace EntityLayer.Concrete
         [StringLength(50), Required]
         public string YazarAdSoyad { get; set; }
 
+        public int KitapStok { get; set; }
 
         [StringLength(50)]
         public string YazarMail { get; set; }

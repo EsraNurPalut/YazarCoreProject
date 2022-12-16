@@ -2,7 +2,7 @@
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig1_added_tables : Migration
+    public partial class mig_create_tables : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,6 +57,7 @@ namespace DataAccessLayer.Migrations
                     YazarID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YazarAdSoyad = table.Column<string>(maxLength: 50, nullable: false),
+                    KitapStok = table.Column<int>(nullable: false),
                     YazarMail = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
@@ -93,7 +94,7 @@ namespace DataAccessLayer.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     YayineviAd = table.Column<string>(maxLength: 50, nullable: false),
                     YayineviAdres = table.Column<string>(maxLength: 50, nullable: true),
-                    YazarID = table.Column<int>(nullable: true)
+                    YazarID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -103,7 +104,7 @@ namespace DataAccessLayer.Migrations
                         column: x => x.YazarID,
                         principalTable: "Yazarlars",
                         principalColumn: "YazarID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

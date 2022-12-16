@@ -10,7 +10,7 @@ namespace DataAccessLayer.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-1M6OMN39;Database=ProjectKutuphane; integrated security=true;");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-1M6OMN39;Database=ProjectKutuphane1; integrated security=true;");
         }
 
         public DbSet<Kitaplar> Kitaplars { get; set; }

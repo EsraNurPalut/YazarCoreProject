@@ -3,14 +3,16 @@ using DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20221216200653_mig_create_tables")]
+    partial class mig_create_tables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,9 +77,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("KitapBasimYili")
                         .HasColumnType("nvarchar(4)")
                         .HasMaxLength(4);
-
-                    b.Property<int>("KitapSayisi")
-                        .HasColumnType("int");
 
                     b.Property<int>("YazarID")
                         .HasColumnType("int");
