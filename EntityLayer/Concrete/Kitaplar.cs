@@ -15,8 +15,6 @@ namespace EntityLayer.Concrete
         [StringLength(50) ,Required]
         public string KitapAd { get; set; }
 
-        public int KitapSayisi { get; set; }
-
         [StringLength(4)]
         public string KitapBasimYili { get; set; }
 
