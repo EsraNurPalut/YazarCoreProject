@@ -19,6 +19,7 @@ namespace EntityLayer.Concrete
         public string KitapBasimYili { get; set; }
 
         [ForeignKey("Yazarlar")]
+        
         public int YazarID { get; set; }  //bir kitabın bir yazarı oldugu için virtual oluyor.list olmaz.
         public virtual Yazarlar Yazarlar { get; private set; }
 
