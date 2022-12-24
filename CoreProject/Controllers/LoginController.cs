@@ -46,23 +46,23 @@ namespace CoreProject.Controllers
 
         //}
 
-        //[HttpPost]
-        //[AllowAnonymous]
-        //public async Task<IActionResult> Login(User user)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        var result = await _signInManager.PasswordSignInAsync(user.UserName, user.UserPassword, user. false);
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(user.UserName, user.UserPassword, user.UserRole, false);
 
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("Index", "Home");
-        //        }
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
 
-        //        ModelState.AddModelError(string.Empty, "Hatalı Giriş");
+                ModelState.AddModelError(string.Empty, "Hatalı Giriş");
 
-        //    }
-        //    return View(user);
+            }
+            return View(user);
         }
     }
-}
+
