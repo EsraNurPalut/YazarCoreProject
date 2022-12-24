@@ -38,11 +38,11 @@ namespace CoreProject
 
                 config.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddMvc(); 
+            services.AddMvc();  // nereye basarsak basalým login sayfasý gelir.
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(x =>
                 {
-                    x.LoginPath = "/Login/Index";
+                    x.LoginPath = "/Home/Index"; //giriþ yolu
                 }
         );
 
@@ -61,9 +61,11 @@ namespace CoreProject
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            //app.UseStatusCodePagesWithReExecute("/ErrorPage/Error1", "?code={0}");
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication(); //login için eklendi
             app.UseRouting();
 
             app.UseAuthorization();

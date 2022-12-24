@@ -1,4 +1,5 @@
 ﻿using CoreProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -10,6 +11,8 @@ using System.Xml.Linq;
 
 namespace CoreProject.Controllers
 {
+
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -19,6 +22,8 @@ namespace CoreProject.Controllers
             _logger = logger;
         }
 
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             string api = "a0e0cef4b2ef0762358ca5e46da69e42";
@@ -28,6 +33,7 @@ namespace CoreProject.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public IActionResult Privacy()
         {
             return View();
